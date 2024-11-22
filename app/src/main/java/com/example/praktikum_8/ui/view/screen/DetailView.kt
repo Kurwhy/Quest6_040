@@ -1,7 +1,9 @@
 package com.example.praktikum_8.ui.view.screen
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
@@ -40,5 +42,30 @@ fun DetailView(
         listDetailData.forEach { detail ->
             DetailRow(label = detail.first, value = detail.second)
         }
+    }
+}
+
+@Composable
+fun DetailRow(
+    label: String,
+    value: String
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+    ) {
+        Text(
+            text = label,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            text = ":",
+            modifier = Modifier.weight(0.1f)
+        )
+        Text(
+            text = value,
+            modifier = Modifier.weight(2f)
+        )
     }
 }
